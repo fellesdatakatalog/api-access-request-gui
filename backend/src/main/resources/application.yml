@@ -1,4 +1,19 @@
 spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods:
+              - GET
+      default-filters:
+        - TokenRelay
+      routes:
+      - id: flights-service
+        uri: https://ver2.maskinporten.no/datasharing
+        predicates:
+          - Path=/maskinporten/**
   security:
     oauth2:
       client:
