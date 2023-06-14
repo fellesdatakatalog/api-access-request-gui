@@ -5,15 +5,15 @@ spring:
         corsConfigurations:
           '[/**]':
             allowedOrigins: "http://localhost:3000"
-            allowedMethods:
-              - GET
-      default-filters:
-        - TokenRelay
+            allowedHeaders: "*"
+            allowedMethods: "*"
       routes:
-      - id: flights-service
-        uri: https://ver2.maskinporten.no/datasharing
+      - id: maskinporten
+        uri: http://localhost:9090
         predicates:
-          - Path=/maskinporten/**
+        - Path=/proxy/**
+        filters:
+        - TokenRelay=
   security:
     oauth2:
       client:
@@ -33,5 +33,6 @@ spring:
             issuer-uri: https://test.ansattporten.no
             user-info-uri: https://test.ansattporten.no/userInfo
 
-server:
-  max-http-header-size: 10000000
+logging:
+  level:
+    org.springframework.cloud.gateway.handler.RoutePredicateHandlerMapping: DEBUG

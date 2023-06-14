@@ -17,7 +17,7 @@ function Header() {
 
     const idToken = getCookie('token.id');
 
-    fetch("/user").then(res => {
+    fetch("/proxy/test").then(res => {
         return res.json();
     }).then(res => {
         console.log(res)
