@@ -29,6 +29,7 @@ public class TestController {
 
     @GetMapping("/proxy")
     public ResponseEntity<?> proxy(ProxyExchange<byte[]> proxy, @AuthenticationPrincipal OAuth2User principal) throws Exception {
+
         return proxy.uri("http://localhost:8181" + "/image/png").get();
     }
 
