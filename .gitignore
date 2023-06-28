@@ -2,3 +2,6 @@
 .DS_Store
 
 node_modules/
+
+api-access-request-gui.iml
+*.log

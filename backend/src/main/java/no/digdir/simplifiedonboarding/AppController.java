@@ -14,16 +14,14 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
 import org.springframework.security.oauth2.core.OAuth2AccessToken;
 import org.springframework.security.oauth2.core.user.OAuth2User;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/api")
 @CrossOrigin
 public class AppController {
 
@@ -65,8 +63,7 @@ public class AppController {
 
         OAuth2AccessToken accessToken = authorizedClient.getAccessToken();
 
-
-        return proxy.uri(proxyUri + proxy.path())
+        return proxy.uri(proxyUri + proxy.path("/api"))
                 .header(HttpHeaders.AUTHORIZATION, "Bearer "+accessToken.getTokenValue())
                 .get();
     }
@@ -87,7 +84,7 @@ public class AppController {
         OAuth2AccessToken accessToken = authorizedClient.getAccessToken();
 
 
-        return proxy.uri(proxyUri + proxy.path())
+        return proxy.uri(proxyUri + proxy.path("/api"))
                 .header(HttpHeaders.AUTHORIZATION, "Bearer "+accessToken.getTokenValue())
                 .body(servletRequest.getReader().lines().collect(Collectors.joining(System.lineSeparator())))
                 .post();

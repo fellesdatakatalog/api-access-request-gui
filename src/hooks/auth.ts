@@ -11,7 +11,7 @@ export const useUser = () => {
         queryFn: async () => {
             try {
 
-                const res = await fetch("/user", {
+                const res = await fetch("/api/user", {
                     headers: {
                         "Content-Type": "application/json",
                     },
