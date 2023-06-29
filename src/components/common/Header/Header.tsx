@@ -5,7 +5,7 @@ import { ReactComponent as Logo } from '../../../assets/logo.svg';
 import {ReactComponent as BedriftSvg} from '../../../assets/ikoner/SVG/Næringsliv.svg';
 import {ReactComponent as PersonSvg} from '../../../assets/ikoner/SVG/Person.svg';
 import {Button, Label} from "@digdir/design-system-react";
-import {login} from "../../auth/login";
+import {loginHovedaministrator as login} from "../../auth/login";
 import StyledLink from "../StyledLink/StyledLink";
 
 function Header() {

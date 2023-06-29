@@ -1,3 +1,4 @@
+
 import React, {ComponentType, FC} from 'react';
 import {Navigate} from 'react-router-dom';
 import {useUser} from "../../hooks/auth";

@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {Button} from '@digdir/design-system-react';
 import {ReactComponent as MpSvg} from '../../../assets/ikoner/SVG/Maskinporten.svg';
 import styles from './styles.module.scss';
-import {login} from "../../auth/login";
+import {loginEksternTjenester, loginHovedaministrator} from "../../auth/login";
 
 function Landingpage() {
     return (
@@ -23,9 +23,14 @@ function Landingpage() {
             </Ingress>
             <div className={styles.loginRow}>
                 <MpSvg className={styles.svg}/>
-                <Button className={styles.loginButton} onClick={login}>
+                <Button className={styles.loginButton} onClick={loginHovedaministrator}>
                     <Label size={"large"}>
-                        Logg inn med Ansattporten
+                        Logg inn med rolle Hovedadministrator
+                    </Label>
+                </Button>
+                <Button className={styles.loginButton} onClick={loginEksternTjenester}>
+                    <Label size={"large"}>
+                        Logg inn med rolle Eksplisitt tjenestedelegering
                     </Label>
                 </Button>
             </div>

@@ -1,5 +1,7 @@
 package no.digdir.simplifiedonboarding;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,9 +68,19 @@ public class AppController {
         OAuth2AccessToken accessToken = authorizedClient.getAccessToken();
 
 
-        return proxy.uri(proxyUri + proxy.path())
-                .header(HttpHeaders.AUTHORIZATION, "Bearer "+accessToken.getTokenValue())
+        ResponseEntity<byte[]> responseEntity = proxy.uri(proxyUri + proxy.path())
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken.getTokenValue())
                 .get();
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            String s = objectMapper.writeValueAsString(new String(responseEntity.getBody()));
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        return responseEntity;
     }
 
     @PostMapping("/datasharing/**")
