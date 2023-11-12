@@ -1302,6 +1302,11 @@
   resolved "https://registry.yarnpkg.com/@digdir/design-system-tokens/-/design-system-tokens-0.8.0.tgz#da7e936b55ecc5c7bdd998ff80f278372aa5e57a"
   integrity sha512-sFdb2PgARW9L7Jr5/eOcua6AWvPNZzAUuehRSYXuql4H3qGMNRmE9iVbyIl3I2r68beUjqJLCwiJzYKTwREAVQ==
 
+"@digdir/design-system-tokens@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@digdir/design-system-tokens/-/design-system-tokens-0.9.0.tgz#2b1bad4568a139f707461cc3cd895f838b686b5a"
+  integrity sha512-d0psCdll51NGZdEj+9sd7KSNZrCsJmmJGR08itzlu7KvT/AVr26FIBQPUpYXyozrSX26pTggJyEfWRogDF+J6A==
+
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz#a23514e8fb9af1269d5f7788aa556798d61c6b59"
