@@ -1297,6 +1297,11 @@
     "@navikt/aksel-icons" "^3.2.4"
     react-number-format "5.2.2"
 
+"@digdir/design-system-tokens@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@digdir/design-system-tokens/-/design-system-tokens-0.10.0.tgz#ca0bd7d80ec07079b3a3440ba793c925c2e49582"
+  integrity sha512-ghlClIm9WoqBRsP62VdnjtTGBMdhaC1TWYXhpIWs5/FuTlGav9SQKAuxRbTzFSv7FUi0WiFGawRapMzWYaZoNg==
+
 "@digdir/design-system-tokens@^0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@digdir/design-system-tokens/-/design-system-tokens-0.8.0.tgz#da7e936b55ecc5c7bdd998ff80f278372aa5e57a"
